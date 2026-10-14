@@ -1,18 +1,18 @@
-#ifndef DIE_H
-#define DIE_H
+#ifndef PIGDICE_DIE_H
+#define PIGDICE_DIE_H
 
 class Die
 {
 private:
-    int m_numOfSides;
     int m_dieValue;
+    int m_numOfSides;
 
 public:
     Die();
-    void set_dieValue();
-    int get_dieValue();
-    void set_numOfSides(int sides);
-    int get_numOfSides();
+    int getDieValue() const;
+    int getNumOfSides() const;
+    void setNumOfSides(int numOfSides);
+    void rollDie();
 };
 
 #endif
