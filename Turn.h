@@ -1,5 +1,5 @@
 #ifndef PIGDICE_TURN_H
-#define PIGDICE_TURN_H
+#define PIGDICE_TURN_H // Caleb Knickerbocker
 
 #include "Die.h"
 

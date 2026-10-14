@@ -1,5 +1,5 @@
 #ifndef PIGDICE_PIGDICEGAME_H
-#define PIGDICE_PIGDICEGAME_H
+#define PIGDICE_PIGDICEGAME_H  // Caleb Knickerbocker
 
 #include "Turn.h"
 

@@ -1,7 +1,7 @@
 
 #include "Die.h"
 
-#include <random>
+#include <random> // Caleb Knickerbocker
 
 Die::Die()
 {

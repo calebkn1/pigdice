@@ -1,5 +1,5 @@
 #ifndef PIGDICE_DIE_H
-#define PIGDICE_DIE_H
+#define PIGDICE_DIE_H // Caleb Knickerbocker
 
 class Die
 {
