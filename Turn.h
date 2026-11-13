@@ -1,7 +1,9 @@
 #ifndef PIGDICE_TURN_H
-#define PIGDICE_TURN_H // Caleb Knickerbocker
+#define PIGDICE_TURN_H
 
-#include "Die.h"
+// Caleb Knickerbocker
+
+#include "die.h"
 
 class PigDiceGame;
 
@@ -16,9 +18,11 @@ private:
     PigDiceGame* m_parentGame=nullptr;
 
 public:
+    // Default constructor
     Turn();
+
     void setParentGame(PigDiceGame* parentGame);
-    void takeTurn();
+    void takeTurn(bool showTurnInfo = true);
     int getScoreThisTurn() const;
     void resetTurnOver();
     int getTurnCount();

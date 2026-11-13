@@ -1,20 +1,23 @@
 #ifndef PIGDICE_PIGDICEGAME_H
-#define PIGDICE_PIGDICEGAME_H  // Caleb Knickerbocker
+#define PIGDICE_PIGDICEGAME_H
+
+// Caleb Knickerbocker
 
 #include "Turn.h"
 
 class PigDiceGame
 {
-private:
+protected:
     Turn m_myTurn;
     bool m_gameOver;
     int m_gameScore;
 
 public:
     PigDiceGame();
+
     int getGameScore() const;
 
-private:
+protected:
     void displayRules();
     void playGame();
 };

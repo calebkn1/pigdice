@@ -1,7 +1,11 @@
-#include "PigDiceGame.h" // Caleb Knickerbocker
+#include "MultiPlayer.h"
+
+// Caleb Knickerbocker
 
 int main()
 {
-    PigDiceGame game;
+    MultiPlayer game;
+    game.mPlayGame();
+
     return 0;
 }

@@ -2,6 +2,7 @@
 #include "Turn.h"
 #include "PigDiceGame.h" // Caleb Knickerbocker
 
+// Default constructor
 Turn::Turn()
 {
     m_turnCount = 0;
@@ -9,15 +10,23 @@ Turn::Turn()
     m_turnOver = false;
     m_choice = '\0';
 }
+
+// Sets the parent game
 void Turn::setParentGame(PigDiceGame* parentGame)
 {
     m_parentGame = parentGame;
 }
-void Turn::takeTurn()
+
+// Handles a player's turn
+void Turn::takeTurn(bool showTurnInfo)
 {
     m_turnCount++;
-    std::cout<<"\n\nTurn "<<m_turnCount;
-    std::cout<<" - Game Score: "<<m_parentGame->getGameScore();
+
+    if(showTurnInfo)
+    {
+        std::cout<<"\n\nTurn "<<m_turnCount;
+        std::cout<<" - Game Score: "<<m_parentGame->getGameScore();
+    }
 
     while(!m_turnOver)
     {
@@ -37,30 +46,41 @@ void Turn::takeTurn()
             std::cout<<"Invalid choice!";
         }
     }
-    std::cout<<"Score Banked This Turn: "<<m_scoreThisTurn;
+
+    std::cout<<"\nScore Banked This Turn: "<<m_scoreThisTurn<<std::endl;
 }
+
+// Returns the score for the turn
 int Turn::getScoreThisTurn() const
 {
     return m_scoreThisTurn;
 }
+
+// Resets the turn
 void Turn::resetTurnOver()
 {
     m_turnOver = false;
 }
+
+// Returns total turns played
 int Turn::getTurnCount()
 {
     return m_turnCount;
 }
+
+// Resets the turn score
 void Turn::resetScoreThisTurn()
 {
     m_scoreThisTurn=0;
 }
+
+// Rolls the die
 void Turn::roll()
 {
     m_myDie.rollDie();
     std::cout<<"Die: "<<m_myDie.getDieValue();
 
-    if (m_myDie.getDieValue()==1)
+    if(m_myDie.getDieValue()==1)
     {
         std::cout<<"\nTurn over. No score.\n";
         m_scoreThisTurn=0;

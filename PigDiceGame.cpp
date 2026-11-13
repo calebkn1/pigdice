@@ -3,18 +3,28 @@
 #include <iostream>     // Caleb Knickerbocker
 #include <ostream>
 
+// Default constructor
 PigDiceGame::PigDiceGame()
 {
     m_gameOver=false;
     m_gameScore=0;
     m_myTurn.setParentGame(this);
-    displayRules();
-    playGame();
 }
+
+// Returns the game score
 int PigDiceGame::getGameScore() const
 {
     return m_gameScore;
 }
+
+// Starts single-player mode
+void PigDiceGame::playSinglePlayerGame()
+{
+    displayRules();
+    playGame();
+}
+
+// Displays the game rules
 void PigDiceGame::displayRules()
 {
     std::cout << "Let's Play PIG Dice!" << std::endl;
@@ -25,6 +35,8 @@ void PigDiceGame::displayRules()
     std::cout << "* If you roll a 1, you lose all points for the turn." << std::endl;
     std::cout << "* If you hold, you bank all points for the turn to the game score." << std::endl;
 }
+
+// Runs the single-player game
 void PigDiceGame::playGame()
 {
     while(!m_gameOver)
